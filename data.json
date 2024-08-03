@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "code": "VOUCHER",
+      "name": "Voucher",
+      "price": 5.00
+    },
+    {
+      "code": "TSHIRT",
+      "name": "T-Shirt",
+      "price": 20.00
+    },
+    {
+      "code": "MUG",
+      "name": "Coffee Mug",
+      "price": 7.50
+    }
+  ],
+  "pricing_rules": [
+    {
+      "product_code": "VOUCHER",
+      "rule_type": "calculate_buy_one_get_one_free",
+      "value": 4
+    },
+    {
+      "product_code": "MUG",
+      "rule_type": "calculate_bulk_discount",
+      "value": 3
+    },
+    {
+      "product_code": "TSHIRT",
+      "rule_type": "calculate_bulk_discount",
+      "value": 6
+    }
+  ]
+}
