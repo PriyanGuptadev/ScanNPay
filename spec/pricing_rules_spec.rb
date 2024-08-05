@@ -7,7 +7,7 @@ RSpec.describe PricingRules do
 
   describe 'calculate_buy_one_get_one_free' do
     it 'calculates buy one get one free correctly' do
-      expect(PricingRules.calculate_buy_one_get_one_free(4, 1)).to eq(2)
+      expect(PricingRules.calculate_buy_one_get_one_free(product, 4, 2, 1)).to eq(10.0)
     end
   end
 

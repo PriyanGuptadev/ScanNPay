@@ -7,7 +7,7 @@ RSpec.describe Checkout do
   let(:tshirt) { Product.new('TSHIRT', 'T-Shirt', 20.00) }
   let(:mug) { Product.new('MUG', 'Coffee Mug', 7.50) }
 
-  let(:voucher_discount) { Discount.new(voucher, :buy_one_get_one_free, 1) }
+  let(:voucher_discount) { Discount.new(voucher, :buy_one_get_one_free, 1, 2) }
   let(:tshirt_discount) { Discount.new(tshirt, :bulk_discount, nil, 3, 10) }
   let(:mug_discount) { Discount.new(mug, :reduce_price, 1.00) }
 
@@ -20,14 +20,13 @@ RSpec.describe Checkout do
     end
   end
 
-
   describe '#total' do
     it 'calculates total correctly for scanned items with multiple rules' do
       co = Checkout.new([voucher_discount, tshirt_discount, mug_discount])
       co.scan("VOUCHER")
       co.scan("TSHIRT")
       co.scan("MUG")
-      expect(co.total).to eq(11.50)
+      expect(co.total).to eq(31.50)
     end
 
     it 'applies bulk discount correctly for quantity greater than threshold' do

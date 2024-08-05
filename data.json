@@ -20,17 +20,20 @@
     {
       "product_code": "VOUCHER",
       "rule_type": "calculate_buy_one_get_one_free",
-      "value": 4
+      "value": 4,
+      "threshold": 2
     },
     {
       "product_code": "MUG",
       "rule_type": "calculate_bulk_discount",
-      "value": 3
+      "value": 3,
+      "threshold": 3
     },
     {
       "product_code": "TSHIRT",
       "rule_type": "calculate_bulk_discount",
-      "value": 6
+      "value": 6,
+      "threshold": 3
     }
   ]
 }

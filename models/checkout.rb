@@ -32,7 +32,7 @@ class Checkout
 
     case rule.rule_type
     when :buy_one_get_one_free
-      PricingRules.calculate_buy_one_get_one_free(quantity, rule.value) * product.price
+      PricingRules.calculate_buy_one_get_one_free(product, quantity, rule.threshold, rule.value)
     when :bulk_discount
       PricingRules.calculate_bulk_discount(product, quantity, rule.threshold, rule.discount_percent)
     when :reduce_price
